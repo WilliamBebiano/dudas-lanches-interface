@@ -1,12 +1,14 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
 import LoginImg from '../../assets/img-login4.svg'
 import Button from '../../components/Button'
+import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
   Container,
@@ -23,6 +25,8 @@ import {
 } from './styles'
 
 function Login() {
+  const { putUserData } = useUser()
+
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -44,11 +48,13 @@ function Login() {
 
   const onSubmit = async clientData => {
     try {
-      const response = await api.post('sessions', {
+      const { data } = await api.post('sessions', {
         email: clientData.email,
         password: clientData.password
       })
-      toast.success(`Bem-Vindo(a) ao Dudas Lanches ${response.data.name}!`, {
+      putUserData(data)
+
+      toast.success(`Bem-Vindo(a) ao Dudas Lanches ${data.name}!`, {
         position: 'top-right',
         hideProgressBar: false,
         closeOnClick: true,
@@ -57,7 +63,6 @@ function Login() {
         progress: undefined,
         theme: 'dark'
       })
-      console.log(response)
     } catch (error) {
       toast.error('Verificar E-mail e senha ', {
         position: 'top-right',
@@ -105,7 +110,10 @@ function Login() {
             </ButtonArea>
 
             <SignInLink>
-              Não possui conta ? <a>Sign Up</a>
+              Não possui conta ?{' '}
+              <Link style={{ color: 'white' }} to="/cadastro">
+                Sign Up
+              </Link>
             </SignInLink>
           </ContainerLogin>
         </form>

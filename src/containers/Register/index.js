@@ -2,12 +2,14 @@ import { yupResolver } from '@hookform/resolvers/yup'
 // import { response } from 'express'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
 import RegisterImg from '../../assets/register-bgnone.svg'
 import Button from '../../components/Button'
+import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
   Container,
@@ -24,6 +26,9 @@ import {
 } from './styles'
 
 function Register() {
+  const users = useUser()
+  console.log(users)
+
   const schema = yup.object().shape({
     name: yup.string().required('Porfavor insira seu nome'),
     email: yup
@@ -139,7 +144,10 @@ function Register() {
             </ButtonArea>
 
             <SignInLink>
-              Já possui conta ? <a>SignIn</a>
+              Já possui conta ?{' '}
+              <Link style={{ color: 'white' }} to="/login">
+                Sign In
+              </Link>
             </SignInLink>
           </ContainerLogin>
         </form>
