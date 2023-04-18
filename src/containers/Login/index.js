@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
@@ -42,11 +43,32 @@ function Login() {
   })
 
   const onSubmit = async clientData => {
-    const response = await api.post('sessions', {
-      email: clientData.email,
-      password: clientData.password
-    })
-    console.log(response)
+    try {
+      const response = await api.post('sessions', {
+        email: clientData.email,
+        password: clientData.password
+      })
+      toast.success(`Bem-Vindo(a) ao Dudas Lanches ${response.data.name}!`, {
+        position: 'top-right',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
+      console.log(response)
+    } catch (error) {
+      toast.error('Verificar E-mail e senha ', {
+        position: 'top-right',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
+    }
   }
 
   return (

@@ -1,6 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+// import { response } from 'express'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
@@ -47,12 +49,43 @@ function Register() {
   })
 
   const onSubmit = async clientData => {
-    const response = await api.post('users', {
-      name: clientData.name,
-      email: clientData.email,
-      password: clientData.password
-    })
-    console.log(response)
+    try {
+      const { status } = await api.post(
+        'users',
+        {
+          name: clientData.name,
+          email: clientData.email,
+          password: clientData.password
+        },
+        { validateStatus: () => true }
+      )
+
+      if (status === 201 || status === 200) {
+        toast.success('Cadastro criado com sucesso', {
+          position: 'top-right',
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark'
+        })
+      } else if (status === 409) {
+        toast.error('Usuario já cadastrado! Faca Login para continuar', {
+          position: 'top-right',
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark'
+        })
+      } else {
+        throw new Error()
+      }
+    } catch (error) {
+      toast.error('Falha no sistema! Tente novamente')
+    }
   }
 
   return (
