@@ -2,7 +2,13 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background: #f5f5f5;
-  max-width: 1080px;
+`
+export const WrapperConteudo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
 `
 export const WrapperImg = styled.div`
   display: flex;
@@ -29,9 +35,12 @@ export const CategoryList = styled.button`
   color: ${props => (props.isActiveCategory ? '#c12a21' : '#f5f5f5')};
 `
 export const ProductsContainer = styled.div`
-  background: #f5f5f5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-left: auto;
-  margin-right: auto;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  margin-top: 20px;
 `

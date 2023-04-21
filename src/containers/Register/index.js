@@ -8,7 +8,7 @@ import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
 import RegisterImg from '../../assets/register-bgnone.svg'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
@@ -25,7 +25,7 @@ import {
   Error
 } from './styles'
 
-function Register() {
+export function Register() {
   const users = useUser()
   console.log(users)
 
@@ -155,5 +155,3 @@ function Register() {
     </Container>
   )
 }
-
-export default Register

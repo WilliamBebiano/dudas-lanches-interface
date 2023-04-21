@@ -29,8 +29,8 @@ export const Wrapper = styled.div`
 export const WrapperMenu = styled.div`
   display: flex;
   flex-direction: row;
-  width: 50rem;
-  height: 25rem;
+  width: 60rem;
+  height: 28rem;
   margin: 5px;
   padding: 5px;
   border-radius: 15px;
@@ -42,10 +42,8 @@ export const CategoryImg = styled.img`
   width: 30rem;
 `
 export const CategoryImgShow = styled.img`
-  width: 25rem;
-  height: 22rem;
-  margin: 5px;
-  padding: 5px;
+  width: 33rem;
+  height: 30rem;
   border-radius: 15px;
   margin-top: 1rem;
 `
@@ -55,7 +53,7 @@ export const CategoryName = styled.div`
   justify-content: space-around;
   background: #ffffff;
   width: 25rem;
-  height: 22rem;
+  height: 25rem;
   margin: 5px;
   padding: 5px;
   border-radius: 15px;

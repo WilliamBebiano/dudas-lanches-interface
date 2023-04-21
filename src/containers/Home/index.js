@@ -2,14 +2,16 @@ import React from 'react'
 
 import DudasLogo from '../../assets/dudas-logo1.svg'
 import Homelogo from '../../assets/homelogo3.svg'
-import CategoryCarousel from '../../components/CategoryCarousel'
-import Division from '../../components/Division'
-import Footer from '../../components/Footer'
-import ProductCarousel from '../../components/ProductCarousel'
-import Promotion from '../../components/Promotion'
+import {
+  CategoryCarousel,
+  Division,
+  Footer,
+  ProductCarousel,
+  Promotion
+} from '../../components'
 import { Container, HomeImg, WrapperImg, Dudasimg } from './styles'
 
-function Home() {
+export function Home() {
   return (
     <Container>
       <WrapperImg>
@@ -24,4 +26,3 @@ function Home() {
     </Container>
   )
 }
-export default Home

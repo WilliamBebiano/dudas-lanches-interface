@@ -3,7 +3,7 @@ import Carousel from 'react-elastic-carousel'
 
 import Category from '../../assets/Nosso Menu1.svg'
 import api from '../../services/api'
-import ContainerButton from '../Button'
+import { Button } from '../Button'
 import {
   Container,
   CategoryImg,
@@ -14,7 +14,7 @@ import {
   CategoryDescribe
 } from './styles'
 
-function CategoryCarousel() {
+export function CategoryCarousel() {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
@@ -87,7 +87,7 @@ function CategoryCarousel() {
                     {' '}
                     {getCategoryDescription(category.name)}
                   </CategoryDescribe>
-                  <ContainerButton
+                  <Button
                     style={{
                       border: 'none',
                       background: '#C12A21',
@@ -96,7 +96,7 @@ function CategoryCarousel() {
                     }}
                   >
                     + VEJA MAIS
-                  </ContainerButton>
+                  </Button>
                 </CategoryName>
               </WrapperMenu>
             </div>
@@ -105,4 +105,3 @@ function CategoryCarousel() {
     </Container>
   )
 }
-export default CategoryCarousel

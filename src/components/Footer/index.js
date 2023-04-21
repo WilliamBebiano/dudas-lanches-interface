@@ -3,7 +3,7 @@ import React from 'react'
 import Dudas from '../../assets/dudas-logo1.svg'
 import { Container, Logo, LinksContainer, Link } from './styles'
 
-function Footer() {
+export function Footer() {
   return (
     <Container>
       <Logo src={Dudas} alt="Logo Bobs" />
@@ -16,5 +16,3 @@ function Footer() {
     </Container>
   )
 }
-
-export default Footer

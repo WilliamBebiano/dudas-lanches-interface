@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import DudasLogo from '../../assets/dudas-logo1.svg'
 import Homelogo from '../../assets/homelogo3.svg'
-import CardProducts from '../../components/CardProducts'
-import Footer from '../../components/Footer'
+import { CardProducts, Footer } from '../../components'
 import api from '../../services/api'
 import {
   Container,
@@ -11,12 +10,14 @@ import {
   WrapperImg,
   Dudasimg,
   CategoryList,
-  ProductsContainer
+  ProductsContainer,
+  WrapperConteudo
 } from './styles'
 
-function Products() {
+export function Products() {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState([])
+  const [filteredproducts, setFilteredProducts] = useState([])
   const [activeCategory, setActiveCategory] = useState(0)
 
   useEffect(() => {
@@ -36,12 +37,24 @@ function Products() {
     loadCategories()
   }, [])
 
+  useEffect(() => {
+    if (activeCategory === 0) {
+      setFilteredProducts(products)
+    } else {
+      const newFilteredProducts = products.filter(
+        product => product.category_id === activeCategory
+      )
+      setFilteredProducts(newFilteredProducts)
+    }
+  }, [activeCategory, products])
+
   return (
     <Container>
       <WrapperImg>
         <HomeImg src={Homelogo} alt="Logo da home" />
         <Dudasimg src={DudasLogo} alt="Logo da home" />
       </WrapperImg>
+
       <WrapperImg style={{ background: 'none', justifyContent: 'center' }}>
         {categories &&
           categories.map(category => (
@@ -56,14 +69,15 @@ function Products() {
             </CategoryList>
           ))}
       </WrapperImg>
-      <ProductsContainer>
-        {products &&
-          products.map(product => (
-            <CardProducts key={product.id} product={product} />
-          ))}
-      </ProductsContainer>
+      <WrapperConteudo>
+        <ProductsContainer>
+          {filteredproducts &&
+            filteredproducts.map(product => (
+              <CardProducts key={product.id} product={product} />
+            ))}
+        </ProductsContainer>
+      </WrapperConteudo>
       <Footer />
     </Container>
   )
 }
-export default Products

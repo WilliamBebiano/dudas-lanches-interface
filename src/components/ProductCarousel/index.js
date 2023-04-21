@@ -4,10 +4,10 @@ import Carousel from 'react-elastic-carousel'
 import Products from '../../assets/Ofertas1.svg'
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
-import ContainerButton from '../Button'
+import { Button } from '../Button'
 import { Container, CategoryImg, CategoryImgShow, Wrapper } from './styles'
 
-function ProductCarousel() {
+export function ProductCarousel() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function ProductCarousel() {
               <CategoryImgShow src={offer.url} alt="foto da categoria" />
               <h3>{offer.name}</h3>
               <p>{formatCurrency(offer.price)}</p>
-              <ContainerButton
+              <Button
                 style={{
                   border: 'none',
                   color: '#ffffff',
@@ -55,11 +55,10 @@ function ProductCarousel() {
                 }}
               >
                 Peça Agora
-              </ContainerButton>
+              </Button>
             </div>
           ))}
       </Carousel>
     </Container>
   )
 }
-export default ProductCarousel

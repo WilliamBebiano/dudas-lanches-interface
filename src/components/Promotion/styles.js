@@ -1,19 +1,18 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100vh;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin: 0 auto;
+`
+export const WrapperDivision = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
 `
 
 export const ImageDivision = styled.img`
-  height: 100vh;
-  width: 30vw;
+  height: 50rem;
+  width: 30rem;
 `

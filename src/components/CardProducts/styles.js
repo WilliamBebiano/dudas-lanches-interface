@@ -6,10 +6,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
-  width: 24rem;
+  width: max-content;
   margin: 2px;
   padding: 16px;
   border-radius: 10px;
+  background: lightgrey;
 `
 export const Image = styled.img`
   width: 12rem;

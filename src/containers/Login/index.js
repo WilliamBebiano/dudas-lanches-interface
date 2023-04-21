@@ -7,7 +7,7 @@ import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
 import LoginImg from '../../assets/img-login4.svg'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
@@ -24,7 +24,7 @@ import {
   Error
 } from './styles'
 
-function Login() {
+export function Login() {
   const history = useHistory()
   const { putUserData } = useUser()
 
@@ -125,5 +125,3 @@ function Login() {
     </Container>
   )
 }
-
-export default Login
