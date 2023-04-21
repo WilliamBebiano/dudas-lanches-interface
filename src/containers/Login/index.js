@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
@@ -25,6 +25,7 @@ import {
 } from './styles'
 
 function Login() {
+  const history = useHistory()
   const { putUserData } = useUser()
 
   const schema = yup.object().shape({
@@ -74,6 +75,9 @@ function Login() {
         theme: 'dark'
       })
     }
+    setTimeout(() => {
+      history.push('/')
+    }, 1000)
   }
 
   return (
