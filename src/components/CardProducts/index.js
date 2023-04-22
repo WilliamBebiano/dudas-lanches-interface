@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
 import { Button } from '../Button'
 import {
@@ -12,6 +13,7 @@ import {
 } from '../CardProducts/styles'
 
 export function CardProducts({ product }) {
+  const { putProductsInCart } = useCart()
   return (
     <Container>
       <Image src={product.url} alt="imagem do produto" />
@@ -26,6 +28,7 @@ export function CardProducts({ product }) {
             color: '#ffffff',
             width: '10rem'
           }}
+          onClick={() => putProductsInCart(product)}
         >
           Adicionar
         </Button>

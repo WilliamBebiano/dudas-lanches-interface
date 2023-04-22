@@ -4,17 +4,30 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 const CartContext = createContext({})
 
 export const CartProvider = ({ children }) => {
-  const [cartProducts, setCartProducts] = useState({})
+  const [cartProducts, setCartProducts] = useState([])
 
   const putProductsInCart = async product => {
-    // setCartProducts(userInfo)
-    // await localStorage.setItem(
-    //   'dudaslanches:userData',
-    //   JSON.stringify(userInfo)
-    // )
-    console.log(product)
-  }
+    const cartIndex = cartProducts.findIndex(prd => prd.id === product.id)
 
+    let newCartProducts = []
+    if (cartIndex >= 0) {
+      newCartProducts = cartProducts
+
+      newCartProducts[cartIndex].quantity =
+        newCartProducts[cartIndex].quantity + 1
+
+      setCartProducts(newCartProducts)
+    } else {
+      product.quantity = 1
+      newCartProducts = [...cartProducts, product]
+      setCartProducts(newCartProducts)
+    }
+
+    await localStorage.setItem(
+      'dudaslanches:cartInfo',
+      JSON.stringify(newCartProducts)
+    )
+  }
   useEffect(() => {
     const loadUserData = async () => {
       const clientCartData = await localStorage.getItem('dudaslanches:cartInfo')
@@ -36,8 +49,9 @@ export const useCart = () => {
   const context = useContext(CartContext)
 
   if (!context) {
-    throw new Error('useUser must be uses with UserContext')
+    throw new Error('useCart must be used with CartProvider')
   }
+
   return context
 }
 
