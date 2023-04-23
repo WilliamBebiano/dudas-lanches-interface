@@ -1,19 +1,80 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #e5e5e5;
-  min-height: 100vh;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  padding: 10px;
+  width: max-content;
 `
-export const WrapperImg = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  background: #e79d0f;
-  /* background: #C12A21; */
-  width: 100vw;
+
+export const Header = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 10px;
+  border-bottom: 1px solid #b5b5b5;
+
+  p {
+    font-size: 16px;
+    color: #b5b5b5;
+  }
 `
-export const Dudasimg = styled.img`
-  width: calc(7rem + 5vw);
+
+export const Body = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  width: max-content + 2vw;
+  padding: 10px;
+  grid-gap: 10px 15px;
+
+  img {
+    border-radius: 15px;
+    width: 135px;
+    padding: 5px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #000000;
+    text-align: justify;
+  }
+  .quantity-container {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+
+    button {
+      height: 30px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    button:hover {
+      color: grey;
+    }
+    button:active {
+      color: yellow;
+    }
+  }
+  .delete-button {
+    height: 30px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .grid-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 `
-export const HomeImg = styled.img`
-  width: calc(20rem + 6vw);
+
+export const EmptyCart = styled.div`
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
 `

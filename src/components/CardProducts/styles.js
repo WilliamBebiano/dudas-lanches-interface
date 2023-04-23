@@ -9,8 +9,9 @@ export const Container = styled.div`
   width: max-content;
   margin: 2px;
   padding: 16px;
-  border-radius: 10px;
-  background: lightgrey;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
 `
 export const Image = styled.img`
   width: 12rem;

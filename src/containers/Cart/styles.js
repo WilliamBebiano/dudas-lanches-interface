@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background: #e5e5e5;
-  min-height: 100vh;
 `
 export const WrapperImg = styled.div`
   display: flex;
@@ -16,4 +15,10 @@ export const Dudasimg = styled.img`
 `
 export const HomeImg = styled.img`
   width: calc(20rem + 6vw);
+`
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `

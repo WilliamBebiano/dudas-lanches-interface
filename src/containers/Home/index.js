@@ -1,22 +1,28 @@
 import React from 'react'
 
-import DudasLogo from '../../assets/dudas-logo1.svg'
 import Homelogo from '../../assets/homelogo3.svg'
 import {
   CategoryCarousel,
   Division,
   Footer,
   ProductCarousel,
-  Promotion
+  Promotion,
+  Header
 } from '../../components'
-import { Container, HomeImg, WrapperImg, Dudasimg } from './styles'
+import { Container, HomeImg, WrapperImg, ButtonNew } from './styles'
 
 export function Home() {
   return (
     <Container>
+      <Header />
       <WrapperImg>
+        <div>
+          <h3>#EUVEJO </h3>
+          <h2>#EUQUERO</h2>
+          <h1>#EUCOMPRO</h1>
+          <ButtonNew>#EUQUERO!</ButtonNew>
+        </div>
         <HomeImg src={Homelogo} alt="Logo da home" />
-        <Dudasimg src={DudasLogo} alt="Logo da home" />
       </WrapperImg>
       <CategoryCarousel />
       <ProductCarousel />
