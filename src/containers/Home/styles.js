@@ -1,45 +1,28 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #e5e5e5;
+  background: #f5f5f5;
 `
 export const WrapperImg = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   background: #e79d0f;
   /* background: #C12A21; */
   width: 100vw;
   max-height: 50vh;
 
-  h3 {
+  h1 {
     font-size: 4rem;
     padding: 10px;
-    margin: 5px;
-    color: white;
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
-    border-radius: 30px;
-    text-align: left;
-    font-weight: 900;
-  }
-  h2 {
-    font-size: 4.5rem;
-    padding: 10px;
-    margin: 5px;
-    color: white;
-    font-weight: 900;
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
-    border-radius: 30px;
-    text-align: center;
-  }
-  h1 {
-    font-size: 5rem;
-    padding: 10px;
-    margin: 5px;
     color: white;
     font-weight: 900;
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
     border-radius: 30px;
     text-align: right;
+  }
+  span {
+    color: #c12a21;
   }
   div {
     display: flex;
@@ -54,19 +37,22 @@ export const HomeImg = styled.img`
 `
 export const ButtonNew = styled.button`
   position: relative;
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1em 2.5em;
   display: inline-block;
   border-radius: 6em;
-  transition: all 0.2s;
+  transition: all 0.3s;
   border: none;
   font-family: inherit;
   font-weight: 900;
   color: white;
   background-color: #c12a21;
   margin-bottom: 15px;
+  width: 300px;
+  box-shadow: 6px 6px 12px #e79d78, -6px -6px 12px #e79d78;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-3px);

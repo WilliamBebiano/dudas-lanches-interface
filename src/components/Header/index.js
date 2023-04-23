@@ -1,4 +1,8 @@
-import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCartShopping,
+  faUser,
+  faArrowRightFromBracket
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -21,15 +25,19 @@ export function Header() {
       </ContainerLeft>
       <ContainerRight>
         <PageLink>
-          <FontAwesomeIcon icon={faCartShopping} size="s" />
+          <FontAwesomeIcon icon={faCartShopping} color={'#e79d0f'} size="s" />
         </PageLink>
         <div>|</div>
         <PageLink>
           <FontAwesomeIcon icon={faUser} size="s" />
         </PageLink>
         <ContainerText>
-          <p>Olá William </p>
-          <p>Sair</p>
+          <h3>
+            <span>Olá</span> William{' '}
+          </h3>
+          <h4>
+            Sair <FontAwesomeIcon icon={faArrowRightFromBracket} />
+          </h4>
         </ContainerText>
       </ContainerRight>
     </Container>

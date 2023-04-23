@@ -6,7 +6,6 @@ import {
   Division,
   Footer,
   ProductCarousel,
-  Promotion,
   Header
 } from '../../components'
 import { Container, HomeImg, WrapperImg, ButtonNew } from './styles'
@@ -17,17 +16,16 @@ export function Home() {
       <Header />
       <WrapperImg>
         <div>
-          <h3>#EUVEJO </h3>
-          <h2>#EUQUERO</h2>
-          <h1>#EUCOMPRO</h1>
-          <ButtonNew>#EUQUERO!</ButtonNew>
+          <h1>
+            <span>AMOR</span> A PRIMEIRA MORDIDA
+          </h1>
+          <ButtonNew>Eu quero agora!</ButtonNew>
         </div>
         <HomeImg src={Homelogo} alt="Logo da home" />
       </WrapperImg>
       <CategoryCarousel />
-      <ProductCarousel />
       <Division />
-      <Promotion />
+      <ProductCarousel />
       <Footer />
     </Container>
   )

@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
-import DudasLogo from '../../assets/dudas-logo1.svg'
 import Homelogo from '../../assets/homelogo3.svg'
-import { CardProducts, Footer } from '../../components'
+import { CardProducts, Footer, Header } from '../../components'
 import api from '../../services/api'
 import {
   Container,
   HomeImg,
   WrapperImg,
-  Dudasimg,
   CategoryList,
   ProductsContainer,
   WrapperConteudo
@@ -50,9 +48,14 @@ export function Products() {
 
   return (
     <Container>
+      <Header />
       <WrapperImg>
+        <div>
+          <h1>
+            DO JEITO QUE <span>VOCÊ</span> GOSTA!
+          </h1>
+        </div>
         <HomeImg src={Homelogo} alt="Logo da home" />
-        <Dudasimg src={DudasLogo} alt="Logo da home" />
       </WrapperImg>
 
       <WrapperImg style={{ background: 'none', justifyContent: 'center' }}>

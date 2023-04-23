@@ -1,20 +1,39 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #e5e5e5;
+  background: #f5f5f5;
 `
 export const WrapperImg = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
   background: #e79d0f;
   /* background: #C12A21; */
   width: 100vw;
+  max-height: 50vh;
+
+  h1 {
+    font-size: 4rem;
+    padding: 10px;
+    color: white;
+    font-weight: 900;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+    border-radius: 30px;
+    text-align: right;
+  }
+  span {
+    color: #c12a21;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
-export const Dudasimg = styled.img`
-  width: calc(7rem + 5vw);
-`
+
 export const HomeImg = styled.img`
-  width: calc(20rem + 6vw);
+  width: 40vw;
 `
 export const Wrapper = styled.div`
   display: flex;

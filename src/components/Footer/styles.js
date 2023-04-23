@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100vw;
   height: 40vh;
-  padding: 0 20px;
+  padding: 4rem;
 `
 
 export const Logo = styled.img`
@@ -16,8 +16,11 @@ export const Logo = styled.img`
 `
 
 export const LinksContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
   align-items: center;
+  width: 70vw;
 `
 
 export const Link = styled.a`

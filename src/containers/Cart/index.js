@@ -1,17 +1,21 @@
 import React from 'react'
 
-import DudasLogo from '../../assets/dudas-logo1.svg'
 import Homelogo from '../../assets/homelogo3.svg'
-import { Footer, CartItems, CartResume } from '../../components'
+import { Footer, CartItems, CartResume, Header } from '../../components'
 // import api from '../../services/api'
-import { Container, HomeImg, WrapperImg, Dudasimg, Wrapper } from './styles'
+import { Container, HomeImg, WrapperImg, Wrapper } from './styles'
 
 export function Cart() {
   return (
     <Container>
+      <Header />
       <WrapperImg>
+        <div>
+          <h1>
+            VOCÊ VAI QUERER <span>MAIS!</span>
+          </h1>
+        </div>
         <HomeImg src={Homelogo} alt="Logo da home" />
-        <Dudasimg src={DudasLogo} alt="Logo da home" />
       </WrapperImg>
       <Wrapper>
         <CartItems />

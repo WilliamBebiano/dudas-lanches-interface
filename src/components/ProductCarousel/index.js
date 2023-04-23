@@ -5,7 +5,13 @@ import Products from '../../assets/Ofertas1.svg'
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
 import { Button } from '../Button'
-import { Container, CategoryImg, CategoryImgShow, Wrapper } from './styles'
+import {
+  Container,
+  CategoryImg,
+  CategoryImgShow,
+  Wrapper,
+  WrapperProducts
+} from './styles'
 
 export function ProductCarousel() {
   const [products, setProducts] = useState([])
@@ -44,18 +50,20 @@ export function ProductCarousel() {
         {products &&
           products.map(offer => (
             <div key={offer.id}>
-              <CategoryImgShow src={offer.url} alt="foto da categoria" />
-              <h3>{offer.name}</h3>
-              <p>{formatCurrency(offer.price)}</p>
-              <Button
-                style={{
-                  border: 'none',
-                  color: '#ffffff',
-                  background: '#C12A21'
-                }}
-              >
-                Peça Agora
-              </Button>
+              <WrapperProducts>
+                <CategoryImgShow src={offer.url} alt="foto da categoria" />
+                <h3>{offer.name}</h3>
+                <p>{formatCurrency(offer.price)}</p>
+                <Button
+                  style={{
+                    border: 'none',
+                    color: '#ffffff',
+                    background: '#C12A21'
+                  }}
+                >
+                  Peça Agora
+                </Button>
+              </WrapperProducts>
             </div>
           ))}
       </Carousel>

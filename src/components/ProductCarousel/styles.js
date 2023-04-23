@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 1080px;
+  max-width: 100vw;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5rem;
 
   .rec.rec-arrow {
     background: #312424;
@@ -35,7 +36,6 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #841416; */
   border-radius: 5px;
   padding: 25px 0;
   margin-top: 35px;
@@ -51,4 +51,17 @@ export const CategoryImgShow = styled.img`
   height: 12rem;
   border-radius: 15px;
   margin-top: 1rem;
+`
+export const WrapperProducts = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 `

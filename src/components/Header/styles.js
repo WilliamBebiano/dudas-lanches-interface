@@ -22,6 +22,7 @@ export const ContainerLeft = styled.div`
 export const PageLink = styled.div`
   margin: 15px;
   padding: 10px;
+  font-weight: 400;
 `
 export const ContainerRight = styled.div`
   display: flex;
@@ -29,4 +30,14 @@ export const ContainerRight = styled.div`
   justify-content: space-around;
   align-items: center;
 `
-export const ContainerText = styled.div``
+export const ContainerText = styled.div`
+  h3 {
+    color: #e79d0f;
+  }
+  span {
+    color: #000;
+  }
+  h4 {
+    color: #c12a21;
+  }
+`

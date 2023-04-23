@@ -9,9 +9,15 @@ export function Footer() {
       <Logo src={Dudas} alt="Logo Bobs" />
       <LinksContainer>
         <Link href="#">Sobre</Link>
+        <Link href="#">
+          <ul>
+            <li>
+              <a>Instagram</a>
+            </li>
+            <li>Facebook</li>
+          </ul>
+        </Link>
         <Link href="#">Contato</Link>
-        <Link href="#">Termos de uso</Link>
-        <Link href="#">Política de privacidade</Link>
       </LinksContainer>
     </Container>
   )

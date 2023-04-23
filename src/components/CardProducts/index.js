@@ -26,7 +26,7 @@ export function CardProducts({ product }) {
             background: '#C12A21',
             marginTop: 5,
             color: '#ffffff',
-            width: '10rem'
+            width: '8rem'
           }}
           onClick={() => putProductsInCart(product)}
         >

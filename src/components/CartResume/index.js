@@ -48,7 +48,12 @@ export function CartResume() {
         </div>
       </Container>
       <Button
-        style={{ border: 'none', width: 'calc(20rem + 4vw)', color: '#ffffff' }}
+        style={{
+          border: 'none',
+          width: 'calc(20rem + 4vw)',
+          color: '#ffffff',
+          background: '#306927'
+        }}
         onClick={submitOrder}
       >
         Finalizar Pedido
