@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.98ec47ca.css",
+    "main.js": "./static/js/main.60345ea5.js",
+    "static/media/merchand-acai.svg": "./static/media/merchand-acai.82426b14b0e2763967cc8450384bf8b3.svg",
+    "static/media/homelogo3.svg": "./static/media/homelogo3.b8b771ff7ba04502b24ca6a5af1da175.svg",
+    "static/media/divisionCoca.svg": "./static/media/divisionCoca.99362447901cf3ccfcea04c86e1b67f6.svg",
+    "static/media/merchand-hamb.svg": "./static/media/merchand-hamb.09060f73cab26652eecc54313d7b28b5.svg",
+    "static/media/register-bgnone.svg": "./static/media/register-bgnone.ed8c37a3b69946325db58e8f625436c3.svg",
+    "static/media/dudas-logo1.svg": "./static/media/dudas-logo1.eaabf61537c71450851372451b7f32c6.svg",
+    "static/media/DUPLA PERFEITA.svg": "./static/media/DUPLA PERFEITA.1c60bc85e88415b54d7bd95ae8eab34a.svg",
+    "static/media/Nosso Menu1.svg": "./static/media/Nosso Menu1.b6c6238fcd953bfb98428641a7fd2f11.svg",
+    "static/media/Ofertas1.svg": "./static/media/Ofertas1.0da8bedf0a3e6fef5c9d98159d24d9a5.svg",
+    "static/media/instagram.svg": "./static/media/instagram.9dfdab5d352f7a7ad5d4ce54e601010d.svg",
+    "static/media/whatsApp.svg": "./static/media/whatsApp.e010d747944c2fe64199ce3b359d4766.svg",
+    "static/media/facebook.svg": "./static/media/facebook.cea6f433fcb76b684aee179c33d785f5.svg",
+    "index.html": "./index.html",
+    "main.98ec47ca.css.map": "./static/css/main.98ec47ca.css.map",
+    "main.60345ea5.js.map": "./static/js/main.60345ea5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98ec47ca.css",
+    "static/js/main.60345ea5.js"
+  ]
+}
