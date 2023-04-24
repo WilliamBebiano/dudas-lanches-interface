@@ -6,7 +6,7 @@ import PrivateRoute from './private-route'
 
 function Routes() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route component={Login} path="/login" />
         <Route component={Register} path="/cadastro" />
