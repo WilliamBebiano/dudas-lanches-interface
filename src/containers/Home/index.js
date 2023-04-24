@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 import Homelogo from '../../assets/homelogo3.svg'
 import {
@@ -11,6 +12,7 @@ import {
 import { Container, HomeImg, WrapperImg, ButtonNew } from './styles'
 
 export function Home() {
+  const history = useHistory()
   return (
     <Container>
       <Header />
@@ -19,7 +21,9 @@ export function Home() {
           <h1>
             <span>AMOR</span> A PRIMEIRA MORDIDA
           </h1>
-          <ButtonNew>Eu quero agora!</ButtonNew>
+          <ButtonNew onClick={() => history.push('/produtos')}>
+            Eu quero agora!
+          </ButtonNew>
         </div>
         <HomeImg src={Homelogo} alt="Logo da home" />
       </WrapperImg>

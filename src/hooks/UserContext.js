@@ -14,6 +14,9 @@ export const UserProvider = ({ children }) => {
       JSON.stringify(userInfo)
     )
   }
+  const logout = async () => {
+    await localStorage.removeItem('dudaslanches:userData')
+  }
 
   useEffect(() => {
     const loadUserData = async () => {
@@ -26,7 +29,7 @@ export const UserProvider = ({ children }) => {
   }, [])
 
   return (
-    <UserContext.Provider value={{ putUserData, userData }}>
+    <UserContext.Provider value={{ putUserData, userData, logout }}>
       {children}
     </UserContext.Provider>
   )

@@ -5,6 +5,7 @@ export const WrapperContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: #ffffff;
 `
 
 export const Container = styled.div`

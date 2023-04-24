@@ -10,7 +10,7 @@ export const Container = styled.div`
   margin: 2px;
   padding: 16px;
   border-radius: 30px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 10px 10px 10px #bebebe, -10px -10px 10px #ffffff;
 `
 export const Image = styled.img`

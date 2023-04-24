@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-
 export const Container = styled.div`
   max-width: 100vw;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;
+  background-color: #ffffff;
 
   .rec.rec-arrow {
     background: #312424;
@@ -60,8 +60,56 @@ export const WrapperProducts = styled.div`
   background-color: #ffffff;
   padding: 10px;
   margin: 15px;
+  gap: 20px;
   border-radius: 15px;
   border: 1px solid #fff;
   transition: all 0.3s;
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+`
+export const Button = styled.button`
+  width: 200px;
+  height: 52.13px;
+  background: #c12a21;
+  border-radius: 30px;
+  text-align: center;
+  border: none;
+  margin: 1rem;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  &::after {
+    background-color: #fff;
+  }
+
+  &::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
 `

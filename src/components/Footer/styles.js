@@ -11,25 +11,50 @@ export const Container = styled.div`
 `
 
 export const Logo = styled.img`
-  width: 100px;
+  width: 200px;
   height: auto;
 `
 
 export const LinksContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
   align-items: center;
   width: 70vw;
 `
 
-export const Link = styled.a`
+export const Link = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
   font-size: 14px;
   color: #000;
-  text-decoration: none;
+
   margin-right: 10px;
 
-  &:hover {
-    color: #999;
+  img {
+    width: 60px;
+    border-radius: 180px;
+  }
+`
+export const LinkContato = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 10px;
+  gap: 15px;
+
+  img {
+    width: 35px;
+    border-radius: 180px;
+  }
+  p {
+    display: flex;
+    align-items: center;
   }
 `

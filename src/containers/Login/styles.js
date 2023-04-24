@@ -3,17 +3,18 @@ import styled from 'styled-components'
 // import BackgroundImage from '../../assets/background-img2.svg'
 
 export const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background: #373737;
+  max-height: 100vh;
+  max-width: 100vw;
+  background: #e79d0f;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `
 
 export const LoginImage = styled.img`
   height: 100vh;
-  width: 50vw;
+  width: 60vw;
 `
 
 export const ContainerItens = styled.div`
@@ -22,7 +23,7 @@ export const ContainerItens = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 50vw;
+  width: 40vw;
 `
 export const LogoDudas = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ export const LoginWrap = styled.div`
   justify-content: center;
   width: 30vw;
   height: 30vh;
-  background: #373737;
+  background: #e79d0f;
   padding: 10px 50px;
 
   h1 {

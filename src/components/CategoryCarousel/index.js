@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-elastic-carousel'
+// import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 import Category from '../../assets/Nosso Menu1.svg'
 import api from '../../services/api'
-import { Button } from '../Button'
 import {
   Container,
   CategoryImg,
   CategoryImgShow,
   Wrapper,
-  WrapperMenu
+  WrapperMenu,
+  ButtonLink
 } from './styles'
 
 export function CategoryCarousel() {
+  // const history = useHistory()
+
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
@@ -41,19 +44,14 @@ export function CategoryCarousel() {
             <div key={category.id}>
               <WrapperMenu>
                 <CategoryImgShow src={category.url} alt="foto da categoria" />
-
-                <Button
-                  style={{
-                    border: 'none',
-                    background: '#C12A21',
-                    color: '#ffffff',
-                    width: 350,
-                    margin: 25,
-                    padding: 10
+                <ButtonLink
+                  to={{
+                    pathname: '/produtos',
+                    state: { categoryId: category.id }
                   }}
                 >
-                  + VEJA MAIS
-                </Button>
+                  {category.name}
+                </ButtonLink>
               </WrapperMenu>
             </div>
           ))}

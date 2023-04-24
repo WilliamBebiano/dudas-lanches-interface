@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 
-import BackgroundImage from '../../assets/vetor-bg2.svg'
-
 export const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  background: #373737;
+  background: #e79d0f;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Mansalva', cursive;
 `
 
 export const RegisterImage = styled.img`
-  background: url(${BackgroundImage}) no-repeat;
   height: 100vh;
   width: 50vw;
 `
@@ -45,7 +41,7 @@ export const LoginWrap = styled.div`
   justify-content: center;
   width: 30vw;
   height: 50vh;
-  background: #373737;
+  background: #e79d0f;
   padding: 10px 50px;
 
   h1 {

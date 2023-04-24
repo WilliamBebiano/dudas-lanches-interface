@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-elastic-carousel'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 import Products from '../../assets/Ofertas1.svg'
+import { useCart } from '../../hooks/CartContext'
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
-import { Button } from '../Button'
 import {
   Container,
   CategoryImg,
   CategoryImgShow,
   Wrapper,
-  WrapperProducts
+  WrapperProducts,
+  Button
 } from './styles'
 
 export function ProductCarousel() {
   const [products, setProducts] = useState([])
-
+  const { putProductsInCart } = useCart()
+  const { push } = useHistory()
   useEffect(() => {
     async function loadProduct() {
       const { data } = await api.get('products')
@@ -55,10 +58,9 @@ export function ProductCarousel() {
                 <h3>{offer.name}</h3>
                 <p>{formatCurrency(offer.price)}</p>
                 <Button
-                  style={{
-                    border: 'none',
-                    color: '#ffffff',
-                    background: '#C12A21'
+                  onClick={() => {
+                    push('/carrinho')
+                    putProductsInCart(offer)
                   }}
                 >
                   Peça Agora

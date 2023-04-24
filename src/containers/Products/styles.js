@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #f5f5f5;
+  background-color: #ffffff;
+  max-width: 100vw;
+  overflow-x: hidden;
 `
 export const WrapperConteudo = styled.div`
   display: flex;
@@ -16,7 +18,6 @@ export const WrapperImg = styled.div`
   align-items: center;
   background: #e79d0f;
   /* background: #C12A21; */
-  width: 100vw;
   max-height: 50vh;
   margin-bottom: 3rem;
 

@@ -13,6 +13,7 @@ export const Header = styled.div`
   grid-template-columns: repeat(5, 1fr);
   padding: 10px;
   border-bottom: 1px solid #b5b5b5;
+  text-align: center;
 
   p {
     font-size: 16px;
@@ -37,7 +38,8 @@ export const Body = styled.div`
   p {
     font-size: 16px;
     color: #000000;
-    text-align: justify;
+    text-align: center;
+    max-width: 180px;
   }
   .quantity-container {
     display: flex;

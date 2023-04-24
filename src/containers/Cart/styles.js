@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #f5f5f5;
+  background-color: #ffffff;
+  overflow-x: hidden;
 `
 export const WrapperImg = styled.div`
   display: flex;
@@ -40,4 +41,5 @@ export const Wrapper = styled.div`
   justify-content: space-evenly;
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: #ffffff;
 `

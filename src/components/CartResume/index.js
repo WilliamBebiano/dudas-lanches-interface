@@ -25,11 +25,19 @@ export function CartResume() {
     const order = cartProducts.map(product => {
       return { id: product.id, quantity: product.quantity }
     })
-    await toast.promise(api.post('orders', { products: order }), {
-      pending: 'Realizando o seu pedido...',
-      success: 'Pedido Realizado com sucesso',
-      error: 'Falha ao tentar realizar o seu pedido, tente novamente'
-    })
+
+    await toast.promise(
+      api.post('orders', { products: order }),
+      {
+        pending: 'Realizando o seu pedido...',
+        success: 'Pedido Realizado com sucesso',
+        error: 'Falha ao tentar realizar o seu pedido, tente novamente'
+      },
+      { successToast: 'Pedido efetuado!' }
+    )
+
+    localStorage.removeItem('dudaslanches:cartInfo')
+    location.reload()
   }
 
   return (

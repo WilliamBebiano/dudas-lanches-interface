@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
 import LogoImage from '../../assets/dudas-logo1.svg'
-import LoginImg from '../../assets/img-login4.svg'
+import LoginImg from '../../assets/register-bgnone.svg'
 import { Button } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
