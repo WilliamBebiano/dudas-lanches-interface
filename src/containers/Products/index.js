@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
 import Homelogo from '../../assets/homelogo3.svg'
-import { CardProducts, Footer, Header } from '../../components'
+import { CardProducts, Footer } from '../../components'
 import api from '../../services/api'
 import {
   Container,
@@ -54,7 +54,6 @@ export function Products({ location: { state } }) {
 
   return (
     <Container>
-      <Header />
       <WrapperImg>
         <div>
           <h1>

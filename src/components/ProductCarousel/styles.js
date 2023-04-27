@@ -20,6 +20,17 @@ export const Container = styled.div`
   .rec.rec-arrow:disabled {
     visibility: hidden;
   }
+  .jIqSqa {
+    background-color: #e79d0f;
+    box-shadow: #e79d0f 0px 0px 1px 3px;
+  }
+  .jIqSqa:hover .jIqSqa:focus {
+    cursor: pointer;
+    box-shadow: #e79d0f 0px 0px 1px 3px;
+  }
+  .kGqetR {
+    box-shadow: #e79d0f 0px 0px 1px 2px;
+  }
   h3 {
     color: #c12a21;
     line-height: 120%;

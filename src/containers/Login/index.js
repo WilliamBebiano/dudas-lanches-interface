@@ -8,6 +8,7 @@ import * as yup from 'yup'
 import LogoImage from '../../assets/dudas-logo1.svg'
 import LoginImg from '../../assets/register-bgnone.svg'
 import { Button } from '../../components'
+import paths from '../../constants/paths'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
@@ -48,11 +49,13 @@ export function Login() {
   })
 
   const onSubmit = async clientData => {
+    let data = null // declare data with an initial null value
     try {
-      const { data } = await api.post('sessions', {
+      const response = await api.post('sessions', {
         email: clientData.email,
         password: clientData.password
       })
+      data = response.data // update the data value here
       putUserData(data)
 
       toast.success(`Bem-Vindo(a) ao Dudas Lanches ${data.name}!`, {
@@ -75,8 +78,14 @@ export function Login() {
         theme: 'dark'
       })
     }
+
     setTimeout(() => {
-      history.push('/')
+      if (data && data.admin) {
+        // check if data exists here
+        history.push(paths.Order)
+      } else {
+        history.push('/')
+      }
     }, 1000)
   }
 

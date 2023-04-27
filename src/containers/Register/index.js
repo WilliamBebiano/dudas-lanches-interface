@@ -28,7 +28,6 @@ import {
 export function Register() {
   const users = useUser()
   console.log(users)
-
   const schema = yup.object().shape({
     name: yup.string().required('Porfavor insira seu nome'),
     email: yup

@@ -12,6 +12,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes />
     </AppProvider>
     <ToastContainer autoClose={2000} />
-    <GlobalStyles></GlobalStyles>
+    <GlobalStyles />
   </>
 )

@@ -6,8 +6,7 @@ import {
   CategoryCarousel,
   Division,
   Footer,
-  ProductCarousel,
-  Header
+  ProductCarousel
 } from '../../components'
 import { Container, HomeImg, WrapperImg, ButtonNew } from './styles'
 
@@ -15,7 +14,6 @@ export function Home() {
   const history = useHistory()
   return (
     <Container>
-      <Header />
       <WrapperImg>
         <div>
           <h1>
