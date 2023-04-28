@@ -1,15 +1,31 @@
+import { yupResolver } from '@hookform/resolvers/yup'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import React, { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import Select from 'react-select'
+import * as Yup from 'yup'
 
+import { ErrorMessage } from '../../../components'
 import api from '../../../services/api'
 import { Container, Label, Input, ButtonStyled, LabelUpload } from './styles'
 
 function NewProducts() {
   const [fileName, setFileName] = useState(null)
   const [categories, setCategories] = useState([])
-  const { register, handleSubmit, control } = useForm()
+
+  const schema = Yup.object({
+    name: Yup.string().required('Digite o nome do Produto'),
+    price: Yup.string().required('Digite o preco do Produto')
+  })
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema)
+  })
   const onSubmit = data => console.log(data)
 
   useEffect(() => {
@@ -26,10 +42,11 @@ function NewProducts() {
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
         <Label>Nome</Label>
         <Input type="text" {...register('name')} />
+        <ErrorMessage>{errors.name?.message}</ErrorMessage>
 
         <Label>Preco</Label>
         <Input type="number" {...register('price')} />
-
+        <ErrorMessage>{errors.price?.message}</ErrorMessage>
         <LabelUpload>
           {fileName || (
             <>
@@ -47,6 +64,7 @@ function NewProducts() {
             }}
           />
         </LabelUpload>
+        <ErrorMessage>{errors.file?.message}</ErrorMessage>
 
         <Controller // usado para controlar lib de terceiros ( ver doc de reactHook form)
           name="category_id"
@@ -63,7 +81,7 @@ function NewProducts() {
             )
           }}
         ></Controller>
-
+        <ErrorMessage>{errors.category?.message}</ErrorMessage>
         <ButtonStyled>Adicionar Produto</ButtonStyled>
       </form>
     </Container>

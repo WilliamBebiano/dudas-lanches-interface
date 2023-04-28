@@ -28,7 +28,7 @@ export const Input = styled.input`
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
   background: #ffffff;
   border: none;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   width: 100%;
   min-width: 300px;
 `
